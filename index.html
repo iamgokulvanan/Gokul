@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Gokul Vanan | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,9 +12,9 @@
 
   <style>
     :root {
-      --primary: #38bdf8;
-      --secondary: #0f172a;
+      --bg: #0f172a;
       --card: #1e293b;
+      --primary: #38bdf8;
       --text: #f8fafc;
       --muted: #94a3b8;
       --border: rgba(255,255,255,0.08);
@@ -28,9 +29,9 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: var(--secondary);
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      overflow-x: hidden;
     }
 
     .container {
@@ -40,8 +41,8 @@
 
     header {
       position: fixed;
-      top: 0;
       width: 100%;
+      top: 0;
       z-index: 1000;
       background: rgba(15, 23, 42, 0.92);
       backdrop-filter: blur(12px);
@@ -63,13 +64,13 @@
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       list-style: none;
     }
 
     .nav-links a {
-      color: var(--text);
       text-decoration: none;
+      color: var(--text);
       transition: 0.3s;
     }
 
@@ -89,8 +90,8 @@
 
     .hero-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 50px;
       align-items: center;
     }
 
@@ -102,15 +103,14 @@
 
     .hero-text h2 {
       color: var(--primary);
-      font-size: 1.4rem;
       margin-bottom: 20px;
-      min-height: 36px;
+      min-height: 40px;
     }
 
     .hero-text p {
       color: var(--muted);
+      line-height: 1.8;
       margin-bottom: 30px;
-      max-width: 600px;
     }
 
     .buttons {
@@ -120,7 +120,6 @@
     }
 
     .btn {
-      display: inline-block;
       padding: 14px 28px;
       border-radius: 50px;
       text-decoration: none;
@@ -130,7 +129,7 @@
 
     .btn-primary {
       background: var(--primary);
-      color: var(--secondary);
+      color: var(--bg);
     }
 
     .btn-secondary {
@@ -142,35 +141,27 @@
       transform: translateY(-3px);
     }
 
-    .profile-card {
+    .profile {
       display: flex;
       justify-content: center;
     }
 
-    .avatar {
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), #6366f1);
-      padding: 6px;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
+    .profile img {
+      width: 340px;
+      height: 340px;
       object-fit: cover;
-      background: #111827;
+      border-radius: 50%;
+      border: 5px solid var(--primary);
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
     }
 
-    h3.section-title {
+    .section-title {
       text-align: center;
-      font-size: 2.3rem;
+      font-size: 2.2rem;
       margin-bottom: 50px;
     }
 
-    .skills-grid,
-    .projects-grid {
+    .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
@@ -179,34 +170,32 @@
     .card {
       background: var(--card);
       padding: 24px;
-      border-radius: 20px;
+      border-radius: 18px;
       border: 1px solid var(--border);
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       border-color: var(--primary);
     }
 
-    .card h4 {
-      margin-bottom: 10px;
+    .card h3 {
       color: var(--primary);
+      margin-bottom: 10px;
     }
 
     .card p {
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
     .contact-box {
       max-width: 700px;
       margin: auto;
-      text-align: center;
       background: var(--card);
       padding: 40px;
       border-radius: 20px;
-      border: 1px solid var(--border);
+      text-align: center;
     }
 
     .contact-item {
@@ -239,9 +228,9 @@
         justify-content: center;
       }
 
-      .avatar {
-        width: 250px;
-        height: 250px;
+      .profile img {
+        width: 260px;
+        height: 260px;
       }
     }
   </style>
@@ -273,23 +262,23 @@
         <h2 id="typing"></h2>
 
         <p>
-          I am passionate about Android development, web technologies,
+          Passionate about Android development, web technologies,
           GitHub projects, and building modern digital experiences.
-          I enjoy learning new technologies and creating useful applications.
         </p>
 
         <div class="buttons">
           <a href="#contact" class="btn btn-primary">Contact Me</a>
-          <a href="https://github.com/iamgokulvanan" target="_blank" class="btn btn-secondary">
+
+          <a href="https://github.com/iamgokulvanan"
+             target="_blank"
+             class="btn btn-secondary">
             View GitHub
           </a>
         </div>
       </div>
 
-      <div class="profile-card">
-        <div class="avatar">
-          <img src="https://photos.app.goo.gl/4QNRYXRi6EQ7KJWd8" alt="Profile photo">
-        </div>
+      <div class="profile">
+        <img src="https://photos.app.goo.gl/4QNRYXRi6EQ7KJWd8" alt="Gokul Vanan">
       </div>
 
     </div>
@@ -298,35 +287,50 @@
 
 <section id="skills">
   <div class="container">
-    <h3 class="section-title">Skills</h3>
+    <h2 class="section-title">Skills</h2>
 
-    <div class="skills-grid">
-      <div class="card"><h4>HTML & CSS</h4><p>Building responsive and modern user interfaces.</p></div>
-      <div class="card"><h4>JavaScript</h4><p>Creating interactive web experiences.</p></div>
-      <div class="card"><h4>Android Development</h4><p>Developing mobile applications for Android.</p></div>
-      <div class="card"><h4>Git & GitHub</h4><p>Version control and project collaboration.</p></div>
+    <div class="cards">
+      <div class="card">
+        <h3>HTML & CSS</h3>
+        <p>Building responsive and modern user interfaces.</p>
+      </div>
+
+      <div class="card">
+        <h3>JavaScript</h3>
+        <p>Creating interactive web experiences.</p>
+      </div>
+
+      <div class="card">
+        <h3>Android Development</h3>
+        <p>Developing mobile applications for Android.</p>
+      </div>
+
+      <div class="card">
+        <h3>Git & GitHub</h3>
+        <p>Managing code efficiently and collaborating on projects.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="container">
-    <h3 class="section-title">Projects</h3>
+    <h2 class="section-title">Projects</h2>
 
-    <div class="projects-grid">
+    <div class="cards">
       <div class="card">
-        <h4>Portfolio Website</h4>
-        <p>A responsive single-page portfolio website built using HTML, CSS, and JavaScript.</p>
+        <h3>Portfolio Website</h3>
+        <p>Modern single-page website built with HTML, CSS, and JavaScript.</p>
       </div>
 
       <div class="card">
-        <h4>Android App</h4>
-        <p>Showcase your Android applications and link them to GitHub repositories.</p>
+        <h3>Android Apps</h3>
+        <p>Showcase your Android projects here with GitHub links.</p>
       </div>
 
       <div class="card">
-        <h4>Open Source</h4>
-        <p>Contribute to open-source projects and share your work with the community.</p>
+        <h3>Open Source</h3>
+        <p>Highlight your contributions and repositories.</p>
       </div>
     </div>
   </div>
@@ -334,11 +338,14 @@
 
 <section id="contact">
   <div class="container">
-    <h3 class="section-title">Get In Touch</h3>
+    <h2 class="section-title">Get In Touch</h2>
 
     <div class="contact-box">
+
       <div class="contact-item">
-        📧 <a href="mailto:iamgokulvanan@gmail.com">iamgokulvanan@gmail.com</a>
+        📧 <a href="mailto:iamgokulvanan@gmail.com">
+          iamgokulvanan@gmail.com
+        </a>
       </div>
 
       <div class="contact-item">
@@ -352,6 +359,7 @@
           github.com/iamgokulvanan
         </a>
       </div>
+
     </div>
   </div>
 </section>
@@ -364,37 +372,37 @@
   const roles = [
     "Android Developer",
     "Web Developer",
-    "Open Source Enthusiast",
-    "Tech Learner"
+    "Tech Enthusiast",
+    "Open Source Learner"
   ];
 
-  let roleIndex = 0;
-  let charIndex = 0;
+  let role = 0;
+  let letter = 0;
 
-  const typingElement = document.getElementById("typing");
+  const text = document.getElementById("typing");
 
-  function typeEffect() {
-    if (charIndex < roles[roleIndex].length) {
-      typingElement.textContent += roles[roleIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(typeEffect, 100);
+  function type() {
+    if (letter < roles[role].length) {
+      text.textContent += roles[role].charAt(letter);
+      letter++;
+      setTimeout(type, 100);
     } else {
-      setTimeout(eraseEffect, 1500);
+      setTimeout(erase, 1500);
     }
   }
 
-  function eraseEffect() {
-    if (charIndex > 0) {
-      typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
-      charIndex--;
-      setTimeout(eraseEffect, 50);
+  function erase() {
+    if (letter > 0) {
+      text.textContent = roles[role].substring(0, letter - 1);
+      letter--;
+      setTimeout(erase, 50);
     } else {
-      roleIndex = (roleIndex + 1) % roles.length;
-      setTimeout(typeEffect, 300);
+      role = (role + 1) % roles.length;
+      setTimeout(type, 300);
     }
   }
 
-  document.addEventListener("DOMContentLoaded", typeEffect);
+  document.addEventListener("DOMContentLoaded", type);
 </script>
 
 </body>
