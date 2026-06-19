@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gokul Vanan | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #38bdf8;
+      --secondary: #0f172a;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--secondary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .hero-text h2 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      min-height: 36px;
+    }
+
+    .hero-text p {
+      color: var(--muted);
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--secondary);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .profile-card {
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #6366f1);
+      padding: 6px;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #111827;
+    }
+
+    h3.section-title {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 50px;
+    }
+
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      background: var(--card);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-item {
+      margin: 18px 0;
+    }
+
+    .contact-item a {
+      color: var(--primary);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .avatar {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Gokul</div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="about">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="hero-text">
+        <h1>Hi, I'm Gokul Vanan</h1>
+        <h2 id="typing"></h2>
+
+        <p>
+          I am passionate about Android development, web technologies,
+          GitHub projects, and building modern digital experiences.
+          I enjoy learning new technologies and creating useful applications.
+        </p>
+
+        <div class="buttons">
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
+          <a href="https://github.com/iamgokulvanan" target="_blank" class="btn btn-secondary">
+            View GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="avatar">
+          <img src="https://via.placeholder.com/320x320.png?text=Your+Photo" alt="Profile photo">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h3 class="section-title">Skills</h3>
+
+    <div class="skills-grid">
+      <div class="card"><h4>HTML & CSS</h4><p>Building responsive and modern user interfaces.</p></div>
+      <div class="card"><h4>JavaScript</h4><p>Creating interactive web experiences.</p></div>
+      <div class="card"><h4>Android Development</h4><p>Developing mobile applications for Android.</p></div>
+      <div class="card"><h4>Git & GitHub</h4><p>Version control and project collaboration.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h3 class="section-title">Projects</h3>
+
+    <div class="projects-grid">
+      <div class="card">
+        <h4>Portfolio Website</h4>
+        <p>A responsive single-page portfolio website built using HTML, CSS, and JavaScript.</p>
+      </div>
+
+      <div class="card">
+        <h4>Android App</h4>
+        <p>Showcase your Android applications and link them to GitHub repositories.</p>
+      </div>
+
+      <div class="card">
+        <h4>Open Source</h4>
+        <p>Contribute to open-source projects and share your work with the community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h3 class="section-title">Get In Touch</h3>
+
+    <div class="contact-box">
+      <div class="contact-item">
+        📧 <a href="mailto:iamgokulvanan@gmail.com">iamgokulvanan@gmail.com</a>
+      </div>
+
+      <div class="contact-item">
+        💼 <a href="https://www.linkedin.com/in/iamgokulvanan" target="_blank">
+          linkedin.com/in/iamgokulvanan
+        </a>
+      </div>
+
+      <div class="contact-item">
+        💻 <a href="https://github.com/iamgokulvanan" target="_blank">
+          github.com/iamgokulvanan
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Gokul Vanan. All rights reserved.
+</footer>
+
+<script>
+  const roles = [
+    "Android Developer",
+    "Web Developer",
+    "Open Source Enthusiast",
+    "Tech Learner"
+  ];
+
+  let roleIndex = 0;
+  let charIndex = 0;
+
+  const typingElement = document.getElementById("typing");
+
+  function typeEffect() {
+    if (charIndex < roles[roleIndex].length) {
+      typingElement.textContent += roles[roleIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeEffect, 100);
+    } else {
+      setTimeout(eraseEffect, 1500);
+    }
+  }
+
+  function eraseEffect() {
+    if (charIndex > 0) {
+      typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(eraseEffect, 50);
+    } else {
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(typeEffect, 300);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+
+</body>
+</html>
